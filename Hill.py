@@ -6,7 +6,7 @@ print('the text entered is:',chartext)
 asciitext=[]
 
 for d in range(len(chartext)):
-	asciitext.append(ord(chartext[d]))
+	asciitext.append(ord(chartext[d])) #ord is used for getting ascii value
 asciitext=numpy.asarray(asciitext)
 asciitext=asciitext-65
 print('the numeric form of text is:',asciitext)

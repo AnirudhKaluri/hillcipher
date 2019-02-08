@@ -30,9 +30,9 @@ print('the numeric of key is:',key)
 
 
 #MAKE A KEY MATRIX
-keylen=int(input('enter matrix dimension'))
-keymatrix=numpy.asarray(key[0:keylen*keylen])
-keymatrix=numpy.reshape(keymatrix,(keylen,keylen))
+keylen=int(input('enter matrix dimension')) #input matrix dimension cuz input key length may or may not be a perfect square
+keymatrix=numpy.asarray(key[0:keylen*keylen]) # keylen*keylen will be the number of elements in the matrix
+keymatrix=numpy.reshape(keymatrix,(keylen,keylen)) #keylen X keylen matrix is formed
 print('keymatrix:\n',keymatrix)
 
 
@@ -40,13 +40,13 @@ print('keymatrix:\n',keymatrix)
 
 #FIND DET OF THE KEYMATRIX
 detkeymatrix=numpy.linalg.det(keymatrix)
-detkeymatrix=math.ceil(detkeymatrix%26) #WE GET DET IN FLOAT SO..
+detkeymatrix=math.ceil(detkeymatrix%26) #WE GET DET IN FLOAT SO USE CEIL. 
 print('det of keymatrix is:',detkeymatrix)
 
 
 #FIND ADJOINT OF KEY MATRIX
 cokeymatrix=numpy.linalg.inv(keymatrix).T*numpy.linalg.det(keymatrix)
-adjkeymatrix=numpy.matrix.transpose(cokeymatrix)
+adjkeymatrix=numpy.matrix.transpose(cokeymatrix) #ADJOINT IS THE TRANSPOSE OF COFACTOR MATRIX
 adjkeymatrix=adjkeymatrix%26
 print('adjoint of keymatrix is:\n',adjkeymatrix)
 

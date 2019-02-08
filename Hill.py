@@ -6,7 +6,7 @@ print('the text entered is:',chartext)
 asciitext=[]
 
 for d in range(len(chartext)):
-	asciitext.append(ord(chartext[d]))
+	asciitext.append(ord(chartext[d])) #ORD convert character to ascii
 	
 #CONVERT LINEAR LIST OF TEXT INTO ROW MATRIX OF TEXT
 asciitext=numpy.asarray(asciitext)
@@ -80,7 +80,7 @@ for x in range(0,length-keylen+1,keylen):
 	print('text to be encrypted matrix is:')
 	for j in tempmatrix:
 		for i in j:
-			print(chr(i+65))
+			print(chr(i+65))  #chr converts ascii to character
 	#ENCRYPT
 	enc=numpy.matmul(keymatrix,tempmatrix)
 	enc=numpy.mod(enc,26)

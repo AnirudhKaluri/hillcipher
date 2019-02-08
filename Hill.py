@@ -46,6 +46,9 @@ print('det of keymatrix is:',detkeymatrix)
 
 #FIND ADJOINT OF KEY MATRIX
 cokeymatrix=numpy.linalg.inv(keymatrix).T*numpy.linalg.det(keymatrix)
+# Transpose of Coffactor is adjoint
+# adjoint/det is inverse
+# so coffactor is transpose of inverse multiplied by det
 adjkeymatrix=numpy.matrix.transpose(cokeymatrix) #ADJOINT IS THE TRANSPOSE OF COFACTOR MATRIX
 adjkeymatrix=adjkeymatrix%26
 print('adjoint of keymatrix is:\n',adjkeymatrix)
